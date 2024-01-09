@@ -184,7 +184,7 @@ class HashMap {
     //make entries more readable
     let readableEntries = [];
     entries.forEach((entry) =>
-      readableEntries.push("\nKey: " + entry[0] + " | Value: " + entry[1])
+      readableEntries.push("Key: " + entry[0] + " | Value: " + entry[1])
     );
     return readableEntries;
   }
