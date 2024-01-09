@@ -182,10 +182,9 @@ class HashMap {
       }
     }
     //make entries more readable
-    let readableEntries = "";
-    entries.forEach(
-      (entry) =>
-        (readableEntries += "\nKey: " + entry[0] + " | Value: " + entry[1])
+    let readableEntries = [];
+    entries.forEach((entry) =>
+      readableEntries.push("\nKey: " + entry[0] + " | Value: " + entry[1])
     );
     return readableEntries;
   }
@@ -226,11 +225,12 @@ console.log("\nRe-adding 8 keys to the map...");
 Array.from({ length: 8 }, (_, i) => {
   map.set("key" + i, i);
 });
-console.log("New load level: " + (map.length() / map.capacity) * 100 + "%\n");
+console.log("New load level: " + (map.length() / map.capacity) * 100 + "%");
 
 console.log("\nKeys contained in map: " + map.keys());
 console.log("\nValues contained in map: " + map.values());
-console.log("\nEntries contained in map: " + map.entries());
+console.log("\nEntries contained in map:");
+console.log(map.entries());
 console.log("\n");
 
 console.log("Adding an additional 56 keys to the map to force resize...\n");
@@ -241,6 +241,6 @@ Array.from({ length: 56 }, (_, i) => {
 console.log("New number of occupied buckets: " + map.length());
 console.log("New max number of buckets: " + map.capacity + "\n");
 console.log("New load level: " + (map.length() / map.capacity) * 100 + "%\n");
-console.log("Keys contained in map: " + map.keys());
-console.log("\nValues contained in map: " + map.values());
+console.log("Entries contained in map:");
+console.log(map.entries());
 console.log("\n");
